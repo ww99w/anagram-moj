@@ -8,6 +8,8 @@ Sample tests:
 ------------
 
 https://anagram-moj.herokuapp.com/pictures
+
 https://anagram-moj.herokuapp.com/crepitus,paste,kinship,enlist,boaster,fresher,sinks,knits,sort
+
 https://anagram-moj.herokuapp.com/blah
 
