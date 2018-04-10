@@ -12,6 +12,7 @@ import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -76,9 +77,9 @@ public class AnagramFinder {
 
     @PostConstruct
     public void init() throws IOException {
-        Resource resource = resourceLoader.getResource("classpath:wordlist.txt");
+        URL resource = new URL("http://static.abscond.org/wordlist.txt");
         List<String> words = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(resource.getInputStream()));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(resource.openStream()));
         String line;
 
         while((line = reader.readLine()) != null)
