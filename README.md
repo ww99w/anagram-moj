@@ -1,5 +1,5 @@
 # anagram-moj
-Code test to find anagrams for a given word from the wordlist file.
+Find anagrams for a given word from the wordlist file.
 
 
 Code deployed to Heroku and available from this URL - https://anagram-moj.herokuapp.com/
