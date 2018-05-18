@@ -1,5 +1,5 @@
 # anagram-moj
-Find anagrams for a given word from the wordlist file.
+Find anagrams for a given word from the wordlist file available from here - http://static.abscond.org/wordlist.txt
 
 
 Code deployed to Heroku and available from this URL - https://anagram-moj.herokuapp.com/
