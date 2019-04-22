@@ -5,7 +5,7 @@
 
 	<groupId>org.example</groupId>
 	<artifactId>anagram-moj</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>anagram-moj</name>
