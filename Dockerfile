@@ -1,6 +1,6 @@
 FROM alpine/git as clone
 WORKDIR /app
-RUN git clone https://github.com/arunk16/anagram-moj.git
+RUN git clone https://github.com/ww99w/anagram-moj.git
 
 FROM maven:3.5-jdk-8-alpine as build
 WORKDIR /app
