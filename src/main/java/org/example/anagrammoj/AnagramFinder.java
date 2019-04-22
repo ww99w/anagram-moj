@@ -77,11 +77,15 @@ public class AnagramFinder {
 
     @PostConstruct
     public void init() throws IOException {
-        URL resource = new URL("http://static.abscond.org/wordlist.txt");
+        String fileName = "wordlist.txt";
         List<String> words = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(resource.openStream()));
-        String line;
 
+//        URL resource = new URL("http://static.abscond.org/wordlist.txt");
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(resource.openStream()));
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream("/" + fileName)));
+
+        String line;
         while((line = reader.readLine()) != null)
             words.add(line);
 
