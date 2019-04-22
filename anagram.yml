@@ -15,6 +15,7 @@ spec:
       containers:
       - name: anagram-svc
         image: index.docker.io/ww99w/anagram:latest
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 8080
         env:
