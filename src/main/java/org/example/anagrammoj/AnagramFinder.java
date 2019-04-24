@@ -31,7 +31,7 @@ public class AnagramFinder {
     private ResourceLoader resourceLoader;
 
 
-    protected void loadWordList(List<String> wordlist){
+    protected void loadWordList(List<String> wordlist) {
         this.setWordlist(wordlist);
     }
 
@@ -55,7 +55,7 @@ public class AnagramFinder {
 
             for (String wordCandidate : wordlist) {
                 char[] candidate = normalise(wordCandidate);
-                if(Arrays.equals(wordInput, candidate))
+                if (Arrays.equals(wordInput, candidate))
                     anagramMatches.add(wordCandidate);
             }
             result.put(word, anagramMatches);
@@ -63,13 +63,13 @@ public class AnagramFinder {
         return result;
     }
 
-    protected AnagramResult sendNoResultForInvalidInput(String input){
+    protected AnagramResult sendNoResultForInvalidInput(String input) {
         AnagramResult result = new AnagramResult();
-        result.put(input,Arrays.asList());
+        result.put(input, Arrays.asList());
         return result;
     }
 
-    private char[] normalise(String value){
+    private char[] normalise(String value) {
         char[] chars = value.toCharArray();
         Arrays.sort(chars);
         return chars;
@@ -83,11 +83,15 @@ public class AnagramFinder {
 //        URL resource = new URL("http://static.abscond.org/wordlist.txt");
 //        BufferedReader reader = new BufferedReader(new InputStreamReader(resource.openStream()));
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream("/" + fileName)));
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream("/" + fileName)));
+
+        Resource resource = resourceLoader.getResource("classpath:" + fileName);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(resource.getInputStream()));
 
         String line;
-        while((line = reader.readLine()) != null)
+        while ((line = reader.readLine()) != null) {
             words.add(line);
+        }
 
         reader.close();
 
